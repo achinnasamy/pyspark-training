@@ -4,7 +4,7 @@ from pyspark import SparkContext
 
 
 sparkconfig = SparkConf()
-sparkconfig.setMaster("local[*]")
+sparkconfig.setMaster("local[8]")
 sparkconfig.setAppName("SparkCSVJOB")
 
 def print_each_line(eachLine):
