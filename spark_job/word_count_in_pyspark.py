@@ -1,9 +1,8 @@
 from __future__ import print_function
 
-from operator import add
-
 from pyspark.conf import SparkConf
 from pyspark.context import SparkContext
+from pyspark.storagelevel import StorageLevel
 
 config = SparkConf()
 config.setMaster("local[*]")
@@ -15,7 +14,7 @@ sc = SparkContext(conf=config)
 textFileRDD = sc.textFile("/home/dharshekthvel/Desktop/ac/code/scalatrainingintellij/data/document.txt")
 
 
-textFileRDD.persist()
+textFileRDD.persist(StorageLevel.MEMORY_AND_DISK)
 textFileRDD.unpersist()
 
 
