@@ -2,6 +2,8 @@ from __future__ import print_function
 from pyspark.conf import SparkConf
 from pyspark.context import SparkContext
 
+
+
 config = SparkConf()
 config.setMaster("local[*]")
 config.setAppName("ParallelizeJOB")
